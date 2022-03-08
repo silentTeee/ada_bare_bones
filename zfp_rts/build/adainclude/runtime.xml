@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<gprconfig>
+<configuration>
+	<config>
+	  <![CDATA[
+		package Linker is
+			for Required_Switches use Linker'Required_Switches & (
+			  "-T${RUNTIME_DIR(ada)}/linker.ld"
+			);
+		end Linker;
+	   ]]>
+	</config>
+</configuration>
+</gprconfig>
