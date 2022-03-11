@@ -37,5 +37,6 @@ project Bare_Bones is
    for Object_Dir use "obj";
    for Exec_Dir use "./";
    for Main use ("bare_bones.adb");
+   for Runtime ("Ada") use "zfp_rts/build";
    for Target use "i686-pc-elf";
 end Bare_Bones;

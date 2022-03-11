@@ -1,4 +1,4 @@
-.global _start                         # Make the startup entry point symbol visible to the linker
+.global startup                         # Make the startup entry point symbol visible to the linker
  
 # Set up the Multiboot header (see GRUB docs for details)
 .set ALIGN,    1<<0                     # Align loaded modules on page boundaries
@@ -23,7 +23,7 @@ header:                                 # Must be in the first 8kb of the kernel
 .comm  magic, 4                         # Declare common symbol magic, allocate it 4-bytes of
                                         # uninitialized memory.
  
-_start:
+startup:
     movl  $(stack + STACKSIZE), %esp    # Set up the stack
  
 # The following saves the contents of the registers as they will likely be
