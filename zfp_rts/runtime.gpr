@@ -65,6 +65,22 @@ library project Runtime is
    --  to do this is to use our run-time's sources as a run-time to build
    --  itself.
    for Runtime ("Ada") use "build";
- 
-   for Target use "i686-pc-elf";
+
+   -- There are two ways to approach how to configure the build system for
+   -- a given target architecture:
+   --
+   -- The first is to modify the database of architectures and corresponding
+   -- build flags that gprbuild keeps track of internally, known as it's
+   -- "Knowledge Base". If done, then picking a target is as simple as shown below:
+
+   for Target use "i686-elf";
+
+   -- ...however, this requires modifying files that are included with your
+   -- distribution's version of gprbuild, and how AdaCore chooses to organize
+   -- this database of architectures is not guaranteed to be stable.
+   --
+   -- The second method is to manually maintain the flags that AdaCore would
+   -- typically define in their gprbuild databank directly in your project files.
+   -- While this may seem messier, doing so increases the portability of your
+   -- project across dev environments, and as such this is what we will be doing 
 end Runtime;

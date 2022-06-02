@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<gprconfig>
+   <!--   GNAT
+    To find the list of supported runtimes, we check the contents of
+    the directory. To be compatible with older versions of GNAT (3.16
+    for instance), we also accept lib/gcc-lib as the directory that
+    contains the runtime files.
+   -->
+  <compiler_description>
+    <name>GNAT</name>
+    <executable prefix="1">(.*-wrs-.*|.*-sysgo.*|.*-elf-.*|.*-eabi-.*|.*-eabispe-.*|avr-.*|.*-elinos-linux.*|.*-generic-linux-gnu-|.*mingw32.*|.*-xcoff-.*|arm-linux-androideabi-|arm-linux-gnueabi-|arm-linux-gnueabihf-|e500v2-gnu-linux-|powerpc-.*-linux.*-|.*-darwin.*-|aarch64-linux-gnu-|.*-qnx.*)?gnatls</executable>
+    <version>
+      <external>${PREFIX}gnatls -v --version</external>
+      <grep regexp="^GNATLS.+?(\d+(\.\d+)?)" group="1"></grep>
+    </version>
+    <languages>Ada</languages>
+    <variable name="gcc_version">
+      <external>${PREFIX}gcc -dumpversion</external>
+    </variable>
+    <runtimes default="default,kernel,native">
+       <directory group="kernel" >\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/rts-(.*)/adalib/</directory>
+    </runtimes>
+    <target>
+      <external>${PREFIX}gcc -dumpmachine</external>
+      <grep regexp="[^\r\n]+"></grep>
+    </target>
+  </compiler_description>
+</gprconfig>

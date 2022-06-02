@@ -8,7 +8,7 @@ KERNEL=bare_bones
 all: binary iso-img
 
 binary:
-	gprbuild -Pbare_bones.gpr
+	gprbuild -P bare_bones
 
 iso-img: binary
 	@echo "Building .iso image from ELF file..." 
@@ -19,7 +19,6 @@ iso-img: binary
 	@echo ''                                >> ${CFG}
 	@echo 'menuentry "Ada Bare" {'          >> ${CFG}
 	@echo "  multiboot /boot/${KERNEL}.elf" >> ${CFG}
-	@echo '  boot'                          >> ${CFG}
 	@echo '}'                               >> ${CFG}
 	@grub-mkrescue --output=${KERNEL}.iso ${ISODIR}
 	@rm -rf ${ISODIR}
@@ -29,8 +28,10 @@ iso-img: binary
 clean:
 	rm -f ${KERNEL}.iso
 	rm -f ${KERNEL}.elf
-	gprclean -Pbare_bones.gpr
-
-clean-all: clean
-	gprclean -Pzfp_rts/runtime.gpr
+	gprclean -Pbare_bones
+	
+clean-all:
+	rm -f ${KERNEL}.iso
+	rm -f ${KERNEL}.elf
+	gprclean -Pbare_bones -r
 	
