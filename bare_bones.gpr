@@ -38,5 +38,4 @@ project Bare_Bones is
    for Object_Dir use "obj";
    for Exec_Dir use "./";
    for Main use ("bare_bones.adb");
-   for Target use "i686-elf";
 end Bare_Bones;

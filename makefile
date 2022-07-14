@@ -8,7 +8,7 @@ KERNEL=bare_bones
 all: binary iso-img
 
 binary:
-	gprbuild -P bare_bones
+	gprbuild -P bare_bones --config=zfp_rts/i686-elf.cgpr
 
 iso-img: binary
 	@echo "Building .iso image from ELF file..." 
@@ -28,10 +28,10 @@ iso-img: binary
 clean:
 	rm -f ${KERNEL}.iso
 	rm -f ${KERNEL}.elf
-	gprclean -Pbare_bones
+	gprclean -P bare_bones
 	
 clean-all:
 	rm -f ${KERNEL}.iso
 	rm -f ${KERNEL}.elf
-	gprclean -Pbare_bones -r
+	gprclean -P bare_bones -r
 	

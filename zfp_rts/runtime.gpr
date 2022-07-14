@@ -64,7 +64,7 @@ library project Runtime is
    --  using the same compiler and targets the same platform. A reliable way
    --  to do this is to use our run-time's sources as a run-time to build
    --  itself.
-   for Runtime ("Ada") use "build";
+   -- for Runtime ("Ada") use "build";
 
    -- There are two ways to approach how to configure the build system for
    -- a given target architecture, assuming one doesn't already exist:
