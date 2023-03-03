@@ -1,4 +1,3 @@
-PWD=`pwd`
 ISODIR=${PWD}/iso
 BOOTDIR=${ISODIR}/boot
 GRUBDIR=${BOOTDIR}/grub
