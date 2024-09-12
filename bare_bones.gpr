@@ -1,4 +1,4 @@
-with "zfp_rts/runtime.gpr";
+with "zfp_rts/x86_zfp_runtime.gpr";
 
 project Bare_Bones is
 

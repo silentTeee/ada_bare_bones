@@ -9,7 +9,7 @@ export PATH := "${PATH}:${PWD}/toolchain/i686-elf/bin"
 all: binary iso-img
 
 binary:
-	gprbuild -P bare_bones --config=zfp_rts/i686-elf.cgpr
+	gprbuild -P bare_bones --config=zfp_rts/i686_elf.cgpr
 
 iso-img: binary
 	@echo "Building .iso image from ELF file..." 

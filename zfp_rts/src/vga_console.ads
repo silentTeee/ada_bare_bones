@@ -1,3 +1,5 @@
+with System;
+
 package VGA_Console is
    pragma Preelaborate (VGA_Console);
 
@@ -93,10 +95,8 @@ package VGA_Console is
    type Screen is array (Screen_Height_Range) of Row;
 
    Video_Memory : Screen;
- 
+
    for Video_Memory'Address use System'To_Address (16#000B_8000#);
- 
-   pragma Import (Ada, Video_Memory);
 
    pragma Import (Ada, Video_Memory);
 
