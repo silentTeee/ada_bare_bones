@@ -4,6 +4,8 @@ GRUBDIR=${BOOTDIR}/grub
 CFG=${GRUBDIR}/grub.cfg
 KERNEL=bare_bones
 
+export PATH := "${PATH}:${PWD}/toolchain/i686-elf/bin"
+
 all: binary iso-img
 
 binary:
