@@ -1,1 +1,7 @@
 toolchain/
+obj/*
+zfp_rts/obj/*
+*.elf
+*.iso
+*.ali
+*.a
