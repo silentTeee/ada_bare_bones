@@ -17,7 +17,6 @@ You can tweak the `i686-elf-gnat-install.sh` to build the GNAT version you want.
 By default it uses the version of the native GCC install and builds the cross-compiler in this project's *toolchain* folder. It doesn't do any cleanup in case you mess something up, so that you can save time on the rebuild, but obviously this can be changed.
 
 # TODO
-* Add behavior to copy relevant files from *zfp_rts/src/* folder to *zfp_rts/build/adainclude/* (or just remove the former entirely)
 * Make the x86_zfp_runtime.gpr configuration a bit more robust
     * I created the .cgpr file based on recommendations from the page https://docs.adacore.com/gprbuild-docs/html/gprbuild_ug/companion_tools.html#. It's unclear whether using a .cgpr is considered the "idiomatic" way of doing things anymore, now that Alire exists.
 
