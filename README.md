@@ -6,10 +6,10 @@ This project was heavily inspired by the [Ada Bare Bones tutorial](https://wiki.
 * An i686 baremetal FSF GNAT cross-compiler (more on this in the next section)
 * `wget`
 * `gcc`
-* `grub-mkrescue` installed
-    * on Debian-based systems without GRUB, install the `grub-common`package
+* `grub-mkrescue`
+    * on Debian-based systems without GRUB (for example, Pop!_OS), install the `grub-common` package
     * if your system is using UEFI instead of BIOS, then you also need `grub-pc-bin`
-* `gprbuild` installed
+* `gprbuild`
 
 # Generating the i686 Baremetal Cross-Compiler
 You can tweak the `i686-elf-gnat-install.sh` to build the GNAT version you want. This script was heavily inspired by the commands on the page https://wiki.osdev.org/GNAT_Cross-Compiler
